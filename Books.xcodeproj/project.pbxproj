@@ -12,6 +12,9 @@
 		A41D326F1EB18C3D00CD0D5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A41D326D1EB18C3D00CD0D5A /* Main.storyboard */; };
 		A41D32711EB18C3D00CD0D5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A41D32701EB18C3D00CD0D5A /* Assets.xcassets */; };
 		A41D32741EB18C3D00CD0D5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A41D32721EB18C3D00CD0D5A /* LaunchScreen.storyboard */; };
+		A41D327C1EB1AD4B00CD0D5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41D327B1EB1AD4B00CD0D5A /* LoginViewController.swift */; };
+		A41D32801EB1AFEB00CD0D5A /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41D327F1EB1AFEB00CD0D5A /* MainTableViewController.swift */; };
+		A41D32821EB1BE0800CD0D5A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41D32811EB1BE0800CD0D5A /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,10 @@
 		A41D32701EB18C3D00CD0D5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A41D32731EB18C3D00CD0D5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A41D32751EB18C3D00CD0D5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A41D327B1EB1AD4B00CD0D5A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A41D327F1EB1AFEB00CD0D5A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		A41D32811EB1BE0800CD0D5A /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		A41D32841EB1C52300CD0D5A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +47,7 @@
 			children = (
 				A41D32681EB18C3D00CD0D5A /* Books */,
 				A41D32671EB18C3D00CD0D5A /* Products */,
+				A41D32831EB1C52300CD0D5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +68,19 @@
 				A41D32701EB18C3D00CD0D5A /* Assets.xcassets */,
 				A41D32721EB18C3D00CD0D5A /* LaunchScreen.storyboard */,
 				A41D32751EB18C3D00CD0D5A /* Info.plist */,
+				A41D327B1EB1AD4B00CD0D5A /* LoginViewController.swift */,
+				A41D327F1EB1AFEB00CD0D5A /* MainTableViewController.swift */,
+				A41D32811EB1BE0800CD0D5A /* PhotoViewController.swift */,
 			);
 			path = Books;
+			sourceTree = "<group>";
+		};
+		A41D32831EB1C52300CD0D5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A41D32841EB1C52300CD0D5A /* Photos.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A41D32801EB1AFEB00CD0D5A /* MainTableViewController.swift in Sources */,
+				A41D327C1EB1AD4B00CD0D5A /* LoginViewController.swift in Sources */,
 				A41D326C1EB18C3D00CD0D5A /* ViewController.swift in Sources */,
 				A41D326A1EB18C3D00CD0D5A /* AppDelegate.swift in Sources */,
+				A41D32821EB1BE0800CD0D5A /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Books/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skms.sds.Books;
@@ -270,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Books/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skms.sds.Books;
