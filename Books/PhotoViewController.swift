@@ -8,12 +8,30 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+    var activeTextField: UITextField?
+    
+    var appdelegate:AppDelegate? = UIApplication.shared.delegate as?AppDelegate
+    
+    @IBOutlet var authorTextField: UITextField!
+    @IBOutlet var titleTextField: UITextField!
+    @IBOutlet var coverImageView: UIImageView!
+    @IBOutlet var urlTextField: UITextField!
+    
+    @IBOutlet var scrollView: UIScrollView!
+    
     @IBAction func close(_ sender: Any) {
+        
+        if let title = titleTextField.text
+        {
+            let book = Book(title: title, author: authorTextField.text, coverImage: coverImageView.image, URL: urlTextField.text)
+            
+            appdelegate?.books.append(book)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
-    @IBOutlet var coverImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +40,8 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         coverImageView.isUserInteractionEnabled = true
         coverImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectPhoto)))
+        
+        setNotification()
     }
     
     func selectPhoto(sender: UITapGestureRecognizer)
@@ -51,6 +71,52 @@ class PhotoViewController: UIViewController, UIImagePickerControllerDelegate, UI
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeTextField = nil
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    func setNotification()
+    {
+        NotificationCenter.default.addObserver(self, selector: #selector(showKeyBoard(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideKeyBoard(notification:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    
+    func showKeyBoard(notification: NSNotification)
+    {
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as?NSValue)?.cgRectValue.size
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height+10, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect: CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        
+        if let activeField = self.activeTextField
+        {
+            if(!aRect.contains(activeField.frame.origin))
+            {
+                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
+            }
+        }
+    }
+    
+    func hideKeyBoard(notification: NSNotification)
+    {
+        let contentInsents: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        self.scrollView.contentInset = contentInsents
+        self.scrollView.scrollIndicatorInsets = contentInsents
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation

@@ -15,6 +15,7 @@
 		A41D327C1EB1AD4B00CD0D5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41D327B1EB1AD4B00CD0D5A /* LoginViewController.swift */; };
 		A41D32801EB1AFEB00CD0D5A /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41D327F1EB1AFEB00CD0D5A /* MainTableViewController.swift */; };
 		A41D32821EB1BE0800CD0D5A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41D32811EB1BE0800CD0D5A /* PhotoViewController.swift */; };
+		A41D32871EB2D9B100CD0D5A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41D32861EB2D9B100CD0D5A /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		A41D327F1EB1AFEB00CD0D5A /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		A41D32811EB1BE0800CD0D5A /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		A41D32841EB1C52300CD0D5A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		A41D32861EB2D9B100CD0D5A /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				A41D327B1EB1AD4B00CD0D5A /* LoginViewController.swift */,
 				A41D327F1EB1AFEB00CD0D5A /* MainTableViewController.swift */,
 				A41D32811EB1BE0800CD0D5A /* PhotoViewController.swift */,
+				A41D32861EB2D9B100CD0D5A /* Book.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 			files = (
 				A41D32801EB1AFEB00CD0D5A /* MainTableViewController.swift in Sources */,
 				A41D327C1EB1AD4B00CD0D5A /* LoginViewController.swift in Sources */,
+				A41D32871EB2D9B100CD0D5A /* Book.swift in Sources */,
 				A41D326C1EB18C3D00CD0D5A /* ViewController.swift in Sources */,
 				A41D326A1EB18C3D00CD0D5A /* AppDelegate.swift in Sources */,
 				A41D32821EB1BE0800CD0D5A /* PhotoViewController.swift in Sources */,
